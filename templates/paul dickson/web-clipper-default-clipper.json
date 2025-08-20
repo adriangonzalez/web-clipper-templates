@@ -1,0 +1,46 @@
+{
+	"schemaVersion": "0.1.0",
+	"name": "Web Clipper Default",
+	"behavior": "create",
+	"noteContentFormat": "## My Highlights\n{{highlights|map: item => item.text|join:\"\\n\\n\"}}\n\n### List best points from this page\n{{\"list the best points from this page\"}}\n\n{{content}}\n\n",
+	"properties": [
+		{
+			"name": "Date-Created",
+			"value": "{{date}}",
+			"type": "date"
+		},
+		{
+			"name": "tags",
+			"value": "#My/WebClippings",
+			"type": "multitext"
+		},
+		{
+			"name": "Author",
+			"value": "{{author|split:\\\", \\\"|wikilink|join}}",
+			"type": "multitext"
+		},
+		{
+			"name": "Source",
+			"value": "{{url}}",
+			"type": "multitext"
+		},
+		{
+			"name": "Aliases",
+			"value": "{{title}}",
+			"type": "text"
+		},
+		{
+			"name": "Topics",
+			"value": "{{\\\"topics in this article, separated by commas\\\"}}",
+			"type": "multitext"
+		},
+		{
+			"name": "Related",
+			"value": "",
+			"type": "multitext"
+		}
+	],
+	"triggers": [],
+	"noteNameFormat": "{{title}}",
+	"path": "04 VAULT/Web Clippings"
+}

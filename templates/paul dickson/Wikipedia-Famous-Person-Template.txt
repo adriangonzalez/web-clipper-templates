@@ -1,0 +1,66 @@
+For some reason I couldn't export this template
+You will need to manually create it as follows:
+
+1) New Template
+2) Add details below
+
+Template Name = Wikipedia Famous Person
+Note Name = {{schema:@Article:name}} - Biography
+Note Location = 02 Cards/People
+
+Properties / YAML
+
+Date-Created = {{date:}}
+cssclasses = table-wide
+tags = #My/WebClippings, #Source/Wikipedia, #People, #People/Famous
+Profession = {{"what is their professional?"}}
+Location
+Website = {{url}}
+Born = {{"when was this person born, output date as YYYY-MM-DD"}}
+Died = {{"when did this person die?, output date as YYYY-MM-DD, if still alive ignore adding information"}}
+Personality
+Achievements = {{"summarise their achievements, organised as an YAML unordered list item, each on a new line"}}
+aliases
+
+Note Content
+
+
+```meta-bind-embed
+[[Metabind People Navigation Buttons]]
+```
+
+![Image|150]({{image}})
+
+>[!summary]
+> {{"add a summary about the author here"}}
+
+### ✨Why is this person important to you?
+- 
+
+### 📚 Key Works or Achievements
+
+```meta-bind
+INPUT[list(placeholder(What are their key achievements?)):Achievements]
+```
+
+### 🎭Personality
+```meta-bind
+INPUT[list(placeholder(List their key personality traits)):Personality]
+```
+
+### 🔗 Links / References
+-
+
+### 💬Quotes or Inspiration
+
+>[!quote]
+
+
+# {{selector:.firstHeading}}
+---
+
+## Wikipedia Literature Note
+
+{{selectorHtml:#mw-content-text|remove_html:("style, img, .noprint, .printfooter, .infobox, .mw-editsection, .mw-default-size, .navbox, .navbox-styles, .thumbinner, .mw-empty-elt, .hatnote, .metadata")|markdown}}
+
+

@@ -1,0 +1,48 @@
+{
+	"schemaVersion": "0.1.0",
+	"name": "Product",
+	"behavior": "create",
+	"noteContentFormat": "{{description}}",
+	"properties": [
+		{
+			"name": "Date-Created",
+			"value": "{{date}}",
+			"type": "text"
+		},
+		{
+			"name": "tags",
+			"value": "#My/WebClippings, #Product",
+			"type": "multitext"
+		},
+		{
+			"name": "Category",
+			"value": "[[Products]]",
+			"type": "text"
+		},
+		{
+			"name": "Description",
+			"value": "{{description}}",
+			"type": "text"
+		},
+		{
+			"name": "URL",
+			"value": "{{url}}",
+			"type": "multitext"
+		},
+		{
+			"name": "Price",
+			"value": "{{meta:property:product:price:amount}}",
+			"type": "text"
+		},
+		{
+			"name": "Image",
+			"value": "{{image}}",
+			"type": "text"
+		}
+	],
+	"triggers": [
+		"schema:@Product"
+	],
+	"noteNameFormat": "{{title}}",
+	"path": "04 VAULT/Web Clippings"
+}

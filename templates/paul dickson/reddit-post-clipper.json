@@ -1,0 +1,43 @@
+{
+	"schemaVersion": "0.1.0",
+	"name": "Reddit Post",
+	"behavior": "create",
+	"noteContentFormat": "\n>[!info] \n>Posted in [{{selector:shreddit-post?subreddit-prefixed-name}}](https://www.reddit.com/{{selector:shreddit-post?subreddit-prefixed-name}}) by [{{selector:shreddit-post?author}}](https://www.reddit.com/user/{{selector:shreddit-post?subreddit-prefixed-name}})\n> Reddit Post: [{{title}}]({{url}})\n\n>[!summary] Thread Title \n>### {{selector:shreddit-post?post-title|trim}}\n\n{{selectorHtml:shreddit-post > div[class=\"text-neutral-content\"]|markdown|callout:(\"quote\", \"Original Post\",false)}}\n\n{{selector:zoomable-img > img?src|image}}\n\n## Comments ({{selector:shreddit-comment-tree?totalcomments}})\n\n{{\"Given all the Reddit comments in the selector:shreddit-comment-tree. Analyze and generate the following:\\n\\nList all the comments with the Author in Heading 3 Markdown with a Link to their https://www.reddit.com/user/ profile after the heading\\n\\nAdd a quote callout with their comments made in markdown like >[!quote].\\n\\n\"}}",
+	"properties": [
+		{
+			"name": "Date-Created",
+			"value": "{{date}}",
+			"type": "text"
+		},
+		{
+			"name": "tags",
+			"value": "#Source/Reddit",
+			"type": "multitext"
+		},
+		{
+			"name": "aliases",
+			"value": "{{selector:shreddit-post?post-title|trim}}",
+			"type": "text"
+		},
+		{
+			"name": "Published",
+			"value": "{{selector:shreddit-post?created-timestamp|date:\\\"YYYY-MM-DD\\\"}}",
+			"type": "text"
+		},
+		{
+			"name": "URL",
+			"value": "{{url}}",
+			"type": "multitext"
+		},
+		{
+			"name": "Subreddit",
+			"value": "https://www.reddit.com/{{selector:shreddit-post?subreddit-prefixed-name}}",
+			"type": "text"
+		}
+	],
+	"triggers": [
+		"https://www.reddit.com"
+	],
+	"noteNameFormat": "✂️Reddit {{selector:shreddit-post?post-title|trim|safe_name}} {{selector:shreddit-post?created-timestamp|date:\"YYYY-MM-DD\"}} ",
+	"path": "04 VAULT/Web Clippings"
+}

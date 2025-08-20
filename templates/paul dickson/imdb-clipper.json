@@ -1,0 +1,68 @@
+{
+	"schemaVersion": "0.1.0",
+	"name": "IMDB",
+	"behavior": "create",
+	"noteContentFormat": "",
+	"properties": [
+		{
+			"name": "Date-Created",
+			"value": "{{date}}",
+			"type": "text"
+		},
+		{
+			"name": "tags",
+			"value": "#My/WebClippings, #Source/Movies, #Movie/Review, #Movies/to-watch",
+			"type": "multitext"
+		},
+		{
+			"name": "Category",
+			"value": "[[Movies]]",
+			"type": "text"
+		},
+		{
+			"name": "Genre",
+			"value": "{{schema:genre|wikilink|join}}",
+			"type": "text"
+		},
+		{
+			"name": "Director",
+			"value": "{{schema:director[*].name|wikilink|join}}",
+			"type": "text"
+		},
+		{
+			"name": "Rating",
+			"value": "⭐⭐⭐⭐",
+			"type": "multitext"
+		},
+		{
+			"name": "scoreImdb",
+			"value": "{{schema:aggregateRating.ratingValue}}",
+			"type": "number"
+		},
+		{
+			"name": "Cast",
+			"value": "{{schema:actor[*].name|slice:0,5|wikilink|join}}",
+			"type": "text"
+		},
+		{
+			"name": "Cover",
+			"value": "{{schema:image}}",
+			"type": "text"
+		},
+		{
+			"name": "Plot",
+			"value": "{{schema:description}}",
+			"type": "text"
+		},
+		{
+			"name": "Year",
+			"value": "{{schema:datePublished|split:\\\"-\\\"|slice:0,1}}",
+			"type": "text"
+		}
+	],
+	"triggers": [
+		"/^https:\\/\\/www\\.imdb\\.com\\/title\\/tt\\d+(?!\\/reference\\/)(\\/[^\\s]*)?$/"
+	],
+	"noteNameFormat": "{{schema:name}}",
+	"path": "04 VAULT/Web Clippings"
+}
