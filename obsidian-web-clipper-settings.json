@@ -128,7 +128,7 @@
     "themeMode": "auto"
   },
   "stats": {
-    "addToObsidian": 6,
+    "addToObsidian": 8,
     "copyToClipboard": 0,
     "saveFile": 0,
     "share": 0
@@ -185,32 +185,20 @@
     "name": "YouTube",
     "behavior": "create",
     "noteNameFormat": "🎥{{schema:@VideoObject:name|safe_name|trim}}-{{schema:@VideoObject:author}}",
-    "path": "04 VAULT/YouTube",
+    "path": "YouTube/{{schema:@VideoObject:author}}",
     "noteContentFormat": "{{\"Given the YouTube video information and transcript. Analyze and generate the following:\\n## Brief Summary\\n\\nBriefly summarise the video.\\n\\n## Key Takeaways\\n\\plist the key takeaways in the video.\"}}\n\n> [!quote] Summary\n> {{\"Briefly summarise the video.\"}}\n\n---\n\n## Best Ideas\n{{\"list the best ideas from the video\"}}\n\n--\n\n## Tools\n{{\"list any tools in the video that could be applied in real life scenarios.\"}}\n\n---\n\n## Reflection\n{{\"what are the key learning points of this video\"}}\n\n---\n\n## Key Message\n{{\"what is the key message of this video\"}} ",
     "context": "# {schema:@VideoObject:name]}\n\n{ schema:@VideoObject:description)}\n\n## Basic Information\n\n- Link: {{schema:@VideoObject:@id}}\n- Channel: ((schema:@VideoObjectauthor)}\n\n{{selectorHtml:.ytd-transcript-segment-list-renderer|replace:\\\"&nbsp;\\\":\\\" \\\"|join|markdown}}",
     "properties": [
       {
-        "id": "17556594496395jb1h04x0",
-        "name": "Date-Added",
-        "value": "{{date:\\\"YYYY-MM-DD}}",
-        "type": "text"
-      },
-      {
         "id": "1755658131831xrrtp9pol",
         "name": "Tags",
-        "value": "#YouTube, #Source/YouTube, #🎥",
+        "value": "#YouTube",
         "type": "text"
       },
       {
-        "id": "1755659522535zu4z44e6b",
-        "name": "Status",
-        "value": "In Progress",
-        "type": "text"
-      },
-      {
-        "id": "1755658131831za7jmu9ar",
+        "id": "1755724723400naeaevjyn",
         "name": "Source",
-        "value": "YouTube, Source/YouTube",
+        "value": "YouTube",
         "type": "text"
       },
       {
@@ -232,6 +220,12 @@
         "type": "text"
       },
       {
+        "id": "1755658131831am05ok0cf",
+        "name": "published",
+        "value": "{{schema:@VideoObject:uploadDate|date:\\\"YYYY-MM-DD\\\"}}",
+        "type": "date"
+      },
+      {
         "id": "1755660022213c6279ohma",
         "name": "Related",
         "value": "[[YouTube]]",
@@ -242,12 +236,6 @@
         "name": "author",
         "value": "{{author|split:\\\", \\\"|wikilink|join}}",
         "type": "multitext"
-      },
-      {
-        "id": "1755658131831am05ok0cf",
-        "name": "published",
-        "value": "{{schema:@VideoObject:uploadDate|date:\\\"YYYY-MM-DD\\\"}}",
-        "type": "date"
       },
       {
         "id": "1755658131831t45qdj7dc",
