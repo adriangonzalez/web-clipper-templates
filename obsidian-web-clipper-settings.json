@@ -1,0 +1,280 @@
+{
+  "general_settings": {
+    "betaFeatures": false,
+    "legacyMode": false,
+    "openBehavior": "popup",
+    "saveBehavior": "addToObsidian",
+    "showMoreActionsButton": false,
+    "silentOpen": false
+  },
+  "highlighter_settings": {
+    "alwaysShowHighlights": true,
+    "highlightBehavior": "highlight-inline",
+    "highlighterEnabled": true
+  },
+  "interpreter_settings": {
+    "defaultPromptContext": "",
+    "interpreterAutoRun": false,
+    "interpreterEnabled": true,
+    "interpreterModel": "1755658371535",
+    "models": [
+      {
+        "enabled": true,
+        "id": "1755658371535",
+        "name": "gpt-4.1",
+        "providerId": "1755658260715",
+        "providerModelId": "gpt-4.1-mini"
+      },
+      {
+        "enabled": true,
+        "id": "1755658544599",
+        "name": "Claude 3.7 Sonnet",
+        "providerId": "1755658260715",
+        "providerModelId": "Claude 3.7 Sonnet"
+      },
+      {
+        "enabled": true,
+        "id": "1755658741580",
+        "name": "gpt-5-chat-latest",
+        "providerId": "1755658260715",
+        "providerModelId": "gpt-5-chat-latest"
+      }
+    ],
+    "providers": [
+      {
+        "apiKey": "sk-7a7aee45f0fd490eaadd37a5afb3308c",
+        "apiKeyRequired": true,
+        "baseUrl": "https://chat.obsidianaitools.com/v1/chat/completions",
+        "id": "1755658260715",
+        "name": "Obsidian AI Tools"
+      }
+    ]
+  },
+  "migrationVersion": 1,
+  "property_types": [
+    {
+      "defaultValue": "{{title}}",
+      "name": "title",
+      "type": "text"
+    },
+    {
+      "defaultValue": "{{url}}",
+      "name": "source",
+      "type": "text"
+    },
+    {
+      "defaultValue": "{{author|split:\", \"|wikilink|join}}",
+      "name": "author",
+      "type": "multitext"
+    },
+    {
+      "defaultValue": "{{published}}",
+      "name": "published",
+      "type": "date"
+    },
+    {
+      "defaultValue": "{{date}}",
+      "name": "created",
+      "type": "date"
+    },
+    {
+      "defaultValue": "{{description}}",
+      "name": "description",
+      "type": "text"
+    },
+    {
+      "defaultValue": "clippings",
+      "name": "tags",
+      "type": "multitext"
+    },
+    {
+      "name": "Date-Added",
+      "type": "text"
+    },
+    {
+      "name": "Tags",
+      "type": "text"
+    },
+    {
+      "name": "Status",
+      "type": "text"
+    },
+    {
+      "name": "Source",
+      "type": "text"
+    },
+    {
+      "name": "Creator",
+      "type": "text"
+    },
+    {
+      "name": "Channel-Name",
+      "type": "text"
+    },
+    {
+      "name": "Video-Url",
+      "type": "text"
+    },
+    {
+      "name": "Related",
+      "type": "text"
+    }
+  ],
+  "reader_settings": {
+    "fontSize": 1.5,
+    "lineHeight": 1.6,
+    "maxWidth": 38,
+    "theme": "default",
+    "themeMode": "auto"
+  },
+  "stats": {
+    "addToObsidian": 6,
+    "copyToClipboard": 0,
+    "saveFile": 0,
+    "share": 0
+  },
+  "template_1755658131831mgbeivq2h": {
+    "id": "1755658131831mgbeivq2h",
+    "name": "Default",
+    "behavior": "create",
+    "noteNameFormat": "{{title}}",
+    "path": "Clippings",
+    "noteContentFormat": "{{content}}",
+    "context": "",
+    "properties": [
+      {
+        "id": "1755658131831t45qdj7dc",
+        "name": "title",
+        "value": "{{title}}"
+      },
+      {
+        "id": "1755658131831za7jmu9ar",
+        "name": "source",
+        "value": "{{url}}"
+      },
+      {
+        "id": "1755658131831snhcjmf37",
+        "name": "author",
+        "value": "{{author|split:\", \"|wikilink|join}}"
+      },
+      {
+        "id": "1755658131831am05ok0cf",
+        "name": "published",
+        "value": "{{published}}"
+      },
+      {
+        "id": "1755658131831ap8b9gtpm",
+        "name": "created",
+        "value": "{{date}}"
+      },
+      {
+        "id": "1755658131831dk2hayulk",
+        "name": "description",
+        "value": "{{description}}"
+      },
+      {
+        "id": "1755658131831xrrtp9pol",
+        "name": "tags",
+        "value": "clippings"
+      }
+    ],
+    "triggers": []
+  },
+  "template_1755658979841cghfx2tgc": {
+    "id": "1755658979841cghfx2tgc",
+    "name": "YouTube",
+    "behavior": "create",
+    "noteNameFormat": "🎥{{schema:@VideoObject:name|safe_name|trim}}-{{schema:@VideoObject:author}}",
+    "path": "04 VAULT/YouTube",
+    "noteContentFormat": "{{\"Given the YouTube video information and transcript. Analyze and generate the following:\\n## Brief Summary\\n\\nBriefly summarise the video.\\n\\n## Key Takeaways\\n\\plist the key takeaways in the video.\"}}\n\n> [!quote] Summary\n> {{\"Briefly summarise the video.\"}}\n\n---\n\n## Best Ideas\n{{\"list the best ideas from the video\"}}\n\n--\n\n## Tools\n{{\"list any tools in the video that could be applied in real life scenarios.\"}}\n\n---\n\n## Reflection\n{{\"what are the key learning points of this video\"}}\n\n---\n\n## Key Message\n{{\"what is the key message of this video\"}} ",
+    "context": "# {schema:@VideoObject:name]}\n\n{ schema:@VideoObject:description)}\n\n## Basic Information\n\n- Link: {{schema:@VideoObject:@id}}\n- Channel: ((schema:@VideoObjectauthor)}\n\n{{selectorHtml:.ytd-transcript-segment-list-renderer|replace:\\\"&nbsp;\\\":\\\" \\\"|join|markdown}}",
+    "properties": [
+      {
+        "id": "17556594496395jb1h04x0",
+        "name": "Date-Added",
+        "value": "{{date:\\\"YYYY-MM-DD}}",
+        "type": "text"
+      },
+      {
+        "id": "1755658131831xrrtp9pol",
+        "name": "Tags",
+        "value": "#YouTube, #Source/YouTube, #🎥",
+        "type": "text"
+      },
+      {
+        "id": "1755659522535zu4z44e6b",
+        "name": "Status",
+        "value": "In Progress",
+        "type": "text"
+      },
+      {
+        "id": "1755658131831za7jmu9ar",
+        "name": "Source",
+        "value": "YouTube, Source/YouTube",
+        "type": "text"
+      },
+      {
+        "id": "1755659708716tjt8m392j",
+        "name": "Creator",
+        "value": "{{schema:author|wikilink}}",
+        "type": "text"
+      },
+      {
+        "id": "17556598135865z3l0st5j",
+        "name": "Channel-Name",
+        "value": "{{schema:@VideoObject:author}}",
+        "type": "text"
+      },
+      {
+        "id": "1755659905797si24nqu6o",
+        "name": "Video-Url",
+        "value": "{{schema:@VideoObject:embedUrl|replace:\\\"embed/\\\":\\\"watch?=v\\\"}}",
+        "type": "text"
+      },
+      {
+        "id": "1755660022213c6279ohma",
+        "name": "Related",
+        "value": "[[YouTube]]",
+        "type": "text"
+      },
+      {
+        "id": "1755658131831snhcjmf37",
+        "name": "author",
+        "value": "{{author|split:\\\", \\\"|wikilink|join}}",
+        "type": "multitext"
+      },
+      {
+        "id": "1755658131831am05ok0cf",
+        "name": "published",
+        "value": "{{schema:@VideoObject:uploadDate|date:\\\"YYYY-MM-DD\\\"}}",
+        "type": "date"
+      },
+      {
+        "id": "1755658131831t45qdj7dc",
+        "name": "title",
+        "value": "{{title}}",
+        "type": "text"
+      },
+      {
+        "id": "1755658131831ap8b9gtpm",
+        "name": "created",
+        "value": "{{date}}",
+        "type": "date"
+      },
+      {
+        "id": "1755658131831dk2hayulk",
+        "name": "description",
+        "value": "{{description}}",
+        "type": "text"
+      }
+    ],
+    "triggers": [
+      "https://www.youtube.com/watch"
+    ]
+  },
+  "template_list": [
+    "1755658979841cghfx2tgc",
+    "1755658131831mgbeivq2h"
+  ],
+  "vaults": []
+}
