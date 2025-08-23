@@ -38,6 +38,27 @@
         "name": "gpt-5-chat-latest",
         "providerId": "1755658260715",
         "providerModelId": "gpt-5-chat-latest"
+      },
+      {
+        "enabled": true,
+        "id": "1755899244842",
+        "name": "Gemini 2.5 Flash",
+        "providerId": "1755899235513",
+        "providerModelId": "gemini-2.5-flash"
+      },
+      {
+        "enabled": true,
+        "id": "1755915548406",
+        "name": "Gemma 3",
+        "providerId": "1755915535695",
+        "providerModelId": "gemma3:4b"
+      },
+      {
+        "enabled": true,
+        "id": "1755915849247",
+        "name": "Claude 3.5 Haiku",
+        "providerId": "1755658260715",
+        "providerModelId": "Claude 3.5 Haiku"
       }
     ],
     "providers": [
@@ -47,6 +68,20 @@
         "baseUrl": "https://chat.obsidianaitools.com/v1/chat/completions",
         "id": "1755658260715",
         "name": "Obsidian AI Tools"
+      },
+      {
+        "apiKey": "AIzaSyDTWwtflE1v2Gu16wuiib3FdBavsF3qDnU",
+        "apiKeyRequired": true,
+        "baseUrl": "https://generativelanguage.googleapis.com/v1beta/chat/completions",
+        "id": "1755899235513",
+        "name": "Google Gemini"
+      },
+      {
+        "apiKey": "",
+        "apiKeyRequired": false,
+        "baseUrl": "http://127.0.0.1:11434/api/chat",
+        "id": "1755915535695",
+        "name": "Ollama"
       }
     ]
   },
@@ -118,6 +153,10 @@
     {
       "name": "Related",
       "type": "text"
+    },
+    {
+      "name": "Topics",
+      "type": "text"
     }
   ],
   "reader_settings": {
@@ -128,7 +167,7 @@
     "themeMode": "auto"
   },
   "stats": {
-    "addToObsidian": 8,
+    "addToObsidian": 14,
     "copyToClipboard": 0,
     "saveFile": 0,
     "share": 0
@@ -185,8 +224,8 @@
     "name": "YouTube",
     "behavior": "create",
     "noteNameFormat": "🎥{{schema:@VideoObject:name|safe_name|trim}}-{{schema:@VideoObject:author}}",
-    "path": "YouTube/{{schema:@VideoObject:author}}",
-    "noteContentFormat": "{{\"Given the YouTube video information and transcript. Analyze and generate the following:\\n## Brief Summary\\n\\nBriefly summarise the video.\\n\\n## Key Takeaways\\n\\plist the key takeaways in the video.\"}}\n\n> [!quote] Summary\n> {{\"Briefly summarise the video.\"}}\n\n---\n\n## Best Ideas\n{{\"list the best ideas from the video\"}}\n\n--\n\n## Tools\n{{\"list any tools in the video that could be applied in real life scenarios.\"}}\n\n---\n\n## Reflection\n{{\"what are the key learning points of this video\"}}\n\n---\n\n## Key Message\n{{\"what is the key message of this video\"}} ",
+    "path": "04 VAULT/YouTube/{{schema:@VideoObject:author}}",
+    "noteContentFormat": "{{\"Given the YouTube video information and transcript. Analyze and generate the following:\\n## Brief Summary\\n\\nBriefly summarise the video.\\n\\n## Key Takeaways\\n\\plist the key takeaways in the video.\"}}\n\n> [!quote] Summary\n> {{\"Briefly summarise the video.\"}}\n\n\n##### Media Extended\n{{schema:@VideoObject:embedUrl}}\n\n## Timestamp Notes\n{{\"add timestamp notes here, make sure timestamps have Obsidian wikilinks back to YouTube\"}}\n\n```meta-bind-embed\n[[Metabind Extended Media Player Buttons]]\n```\n\n\n---\n\n## Best Ideas\n{{\"list the best ideas from the video\"}}\n\n--\n\n## Tools\n{{\"list any tools in the video that could be applied in real life scenarios.\"}}\n\n---\n\n## Reflection\n{{\"what are the key learning points of this video\"}}\n\n---\n\n## Key Message\n{{\"what is the key message of this video\"}} ",
     "context": "# {schema:@VideoObject:name]}\n\n{ schema:@VideoObject:description)}\n\n## Basic Information\n\n- Link: {{schema:@VideoObject:@id}}\n- Channel: ((schema:@VideoObjectauthor)}\n\n{{selectorHtml:.ytd-transcript-segment-list-renderer|replace:\\\"&nbsp;\\\":\\\" \\\"|join|markdown}}",
     "properties": [
       {
@@ -253,6 +292,12 @@
         "id": "1755658131831dk2hayulk",
         "name": "description",
         "value": "{{description}}",
+        "type": "text"
+      },
+      {
+        "id": "1755916849221qzr1j1j9a",
+        "name": "Topics",
+        "value": "{{\\\"topics in this article, separated by commas\\\"}}",
         "type": "text"
       }
     ],
