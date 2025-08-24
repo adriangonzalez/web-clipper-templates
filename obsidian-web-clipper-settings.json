@@ -167,7 +167,7 @@
     "themeMode": "auto"
   },
   "stats": {
-    "addToObsidian": 14,
+    "addToObsidian": 53,
     "copyToClipboard": 0,
     "saveFile": 0,
     "share": 0
@@ -225,7 +225,7 @@
     "behavior": "create",
     "noteNameFormat": "🎥{{schema:@VideoObject:name|safe_name|trim}}-{{schema:@VideoObject:author}}",
     "path": "04 VAULT/YouTube/{{schema:@VideoObject:author}}",
-    "noteContentFormat": "{{\"Given the YouTube video information and transcript. Analyze and generate the following:\\n## Brief Summary\\n\\nBriefly summarise the video.\\n\\n## Key Takeaways\\n\\plist the key takeaways in the video.\"}}\n\n> [!quote] Summary\n> {{\"Briefly summarise the video.\"}}\n\n\n##### Media Extended\n{{schema:@VideoObject:embedUrl}}\n\n## Timestamp Notes\n{{\"add timestamp notes here, make sure timestamps have Obsidian wikilinks back to YouTube\"}}\n\n```meta-bind-embed\n[[Metabind Extended Media Player Buttons]]\n```\n\n\n---\n\n## Best Ideas\n{{\"list the best ideas from the video\"}}\n\n--\n\n## Tools\n{{\"list any tools in the video that could be applied in real life scenarios.\"}}\n\n---\n\n## Reflection\n{{\"what are the key learning points of this video\"}}\n\n---\n\n## Key Message\n{{\"what is the key message of this video\"}} ",
+    "noteContentFormat": "{{\"Given the YouTube video information and transcript. Analyze and generate the following:\\n## Brief Summary\\n\\nBriefly summarize the video.\\n\\n## Key Takeaways\\n\\plist the key takeaways in the video.\"}}\n\n> [!quote] Summary\n> {{\"Briefly summarize the video.\"}}\n\n## Video (Media Extended)\n[{{title}}]({{url}})\n\n### Timestamp Notes\n{{\"add timestamp notes here. the url must always have t=timevalue#t=timevalue.1 and should be formatted like the following: - [00:06](https://www.youtube.com/watch?v=lofVgAzut6w&t=6#t=6.1) - Topic\"}}\n\n```meta-bind-embed\n[[Metabind Extended Media Player Buttons]]\n```\n\n---\n## Best Ideas\n{{\"list the best ideas from the video\"}}\n\n---\n## Tools\n{{\"list any tools in the video that could be applied in real life scenarios.\"}}\n\n---\n## Reflection\n{{\"what are the key learning points of this video\"}}\n\n---\n## Key Message\n{{\"what is the key message of this video\"}} ",
     "context": "# {schema:@VideoObject:name]}\n\n{ schema:@VideoObject:description)}\n\n## Basic Information\n\n- Link: {{schema:@VideoObject:@id}}\n- Channel: ((schema:@VideoObjectauthor)}\n\n{{selectorHtml:.ytd-transcript-segment-list-renderer|replace:\\\"&nbsp;\\\":\\\" \\\"|join|markdown}}",
     "properties": [
       {
