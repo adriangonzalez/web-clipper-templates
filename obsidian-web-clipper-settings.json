@@ -16,7 +16,7 @@
     "defaultPromptContext": "",
     "interpreterAutoRun": false,
     "interpreterEnabled": true,
-    "interpreterModel": "1755658371535",
+    "interpreterModel": "1755658544599",
     "models": [
       {
         "enabled": true,
@@ -270,7 +270,7 @@
     "themeMode": "auto"
   },
   "stats": {
-    "addToObsidian": 54,
+    "addToObsidian": 79,
     "copyToClipboard": 0,
     "saveFile": 0,
     "share": 0
@@ -455,7 +455,7 @@
       "https://www.reddit.com"
     ],
     "noteNameFormat": "✂️Reddit {{selector:shreddit-post?post-title|trim|safe_name}} {{selector:shreddit-post?created-timestamp|date:\"YYYY-MM-DD\"}} ",
-    "path": "04 VAULT/Web Clippings",
+    "path": "04 VAULT/Reddit",
     "id": "17560730885882pb70e5",
     "context": ""
   },
@@ -699,7 +699,146 @@
     "path": "04 VAULT/Web Clippings",
     "id": "175607380839975y3zsd"
   },
+  "template_1756311131233o48u886v0": {
+    "schemaVersion": "0.1.0",
+    "name": "Reddit Post (Better)",
+    "behavior": "create",
+    "noteContentFormat": ">[!info] \n>Posted in [{{selector:shreddit-post?subreddit-prefixed-name}}](https://www.reddit.com/{{selector:shreddit-post?subreddit-prefixed-name}}) by [{{selector:shreddit-post?author}}](https://www.reddit.com/user/{{selector:shreddit-post?subreddit-prefixed-name}})\n>Reddit Post: [{{title}}]({{url}})\n\n>[!info] Thread Title \n>### {{selector:shreddit-post?post-title|trim}}\n\n---\n\n>[!summary] ## Summary\n>{{\"Briefly summarize the reddit post.\"}}\n\n>[!info] ## Key Takeaways\n{{\"create a bullet list of the key takeaways in the post as a blockquote\"}}\n\n---\n\n{{selectorHtml:shreddit-post > div[class=\"text-neutral-content\"]|markdown|callout:(\"quote\", \"Original Post\",false)}}\n\n{{selector:zoomable-img > img?src|image}}\n\n## Comments ({{selector:shreddit-comment-tree?totalcomments}})\n\n{{\"Given all the Reddit comments in the selector:shreddit-comment-tree. Analyze and generate the following:\\n\\nList all the comments with the Author in Heading 3 Markdown with a Link to their https://www.reddit.com/user/ profile after the heading\\n\\nAdd a quote callout with their comments made in markdown like >[!quote].\\n\\n\"}}",
+    "properties": [
+      {
+        "id": "1756073088597p4ojx7u",
+        "name": "Date-Created",
+        "value": "{{date}}",
+        "type": "text"
+      },
+      {
+        "id": "1756073088597iogedk0",
+        "name": "tags",
+        "value": "#Source/Reddit",
+        "type": "multitext"
+      },
+      {
+        "id": "1756073088597dxav17m",
+        "name": "aliases",
+        "value": "{{selector:shreddit-post?post-title|trim}}",
+        "type": "text"
+      },
+      {
+        "id": "1756073088597hjfbw79",
+        "name": "Published",
+        "value": "{{selector:shreddit-post?created-timestamp|date:\\\"YYYY-MM-DD\\\"}}",
+        "type": "text"
+      },
+      {
+        "id": "1756073088597xse2mcb",
+        "name": "URL",
+        "value": "{{url}}",
+        "type": "multitext"
+      },
+      {
+        "id": "175607308859727rdhns",
+        "name": "Subreddit",
+        "value": "https://www.reddit.com/{{selector:shreddit-post?subreddit-prefixed-name}}",
+        "type": "text"
+      }
+    ],
+    "triggers": [
+      "https://www.reddit.com"
+    ],
+    "noteNameFormat": "✂️Reddit {{selector:shreddit-post?post-title|trim|safe_name}} {{selector:shreddit-post?created-timestamp|date:\"YYYY-MM-DD\"}} ",
+    "path": "04 VAULT/Reddit",
+    "id": "1756311131233o48u886v0",
+    "context": ""
+  },
+  "template_17563244334263wy4uogzt": {
+    "id": "17563244334263wy4uogzt",
+    "name": "Coursera",
+    "behavior": "create",
+    "noteNameFormat": "🎥{{schema:@VideoObject:name|safe_name|trim}}-{{schema:@VideoObject:author}}",
+    "path": "04 VAULT/Coursera/{{schema:@VideoObject:author}}",
+    "noteContentFormat": "{{\"Given the Coursera video information and transcript. Analyze and generate the following:\\n## Brief Summary\\n\\nBriefly summarize the video.\\n\\n## Key Takeaways\\n\\plist the key takeaways in the video.\"}}\n\n> [!quote] Summary\n> {{\"Briefly summarize the video.\"}}\n\n## Video (Media Extended)\n[{{title}}]({{url}})\n\n### Timestamp Notes\n\n```meta-bind-embed\n[[Metabind Extended Media Player Buttons]]\n```\n\n---\n## Best Ideas\n{{\"list the best ideas from the video\"}}\n\n---\n## Tools\n{{\"list any tools in the video that could be applied in real life scenarios.\"}}\n\n---\n## Reflection\n{{\"what are the key learning points of this video\"}}\n\n---\n## Key Message\n{{\"what is the key message of this video\"}} ",
+    "context": "# {schema:@VideoObject:name]}\n\n{ schema:@VideoObject:description)}\n\n## Basic Information\n\n- Link: {{schema:@VideoObject:@id}}\n- Channel: ((schema:@VideoObjectauthor)}\n\n{{selectorHtml:.ytd-transcript-segment-list-renderer|replace:\\\"&nbsp;\\\":\\\" \\\"|join|markdown}}",
+    "properties": [
+      {
+        "id": "1755658131831xrrtp9pol",
+        "name": "Tags",
+        "value": "#Coursera",
+        "type": "text"
+      },
+      {
+        "id": "1755724723400naeaevjyn",
+        "name": "Source",
+        "value": "Coursera",
+        "type": "text"
+      },
+      {
+        "id": "1755659708716tjt8m392j",
+        "name": "Creator",
+        "value": "{{schema:author|wikilink}}",
+        "type": "text"
+      },
+      {
+        "id": "17556598135865z3l0st5j",
+        "name": "Channel-Name",
+        "value": "{{schema:@VideoObject:author}}",
+        "type": "text"
+      },
+      {
+        "id": "1755659905797si24nqu6o",
+        "name": "Video-Url",
+        "value": "{{schema:@VideoObject:embedUrl|replace:\\\"embed/\\\":\\\"watch?=v\\\"}}",
+        "type": "text"
+      },
+      {
+        "id": "1755658131831am05ok0cf",
+        "name": "published",
+        "value": "{{schema:@VideoObject:uploadDate|date:\\\"YYYY-MM-DD\\\"}}",
+        "type": "date"
+      },
+      {
+        "id": "1755660022213c6279ohma",
+        "name": "Related",
+        "value": "[[Coursera]]",
+        "type": "text"
+      },
+      {
+        "id": "1755658131831snhcjmf37",
+        "name": "author",
+        "value": "{{author|split:\\\", \\\"|wikilink|join}}",
+        "type": "multitext"
+      },
+      {
+        "id": "1755658131831t45qdj7dc",
+        "name": "title",
+        "value": "{{title}}",
+        "type": "text"
+      },
+      {
+        "id": "1755658131831ap8b9gtpm",
+        "name": "created",
+        "value": "{{date}}",
+        "type": "date"
+      },
+      {
+        "id": "1755658131831dk2hayulk",
+        "name": "description",
+        "value": "{{description}}",
+        "type": "text"
+      },
+      {
+        "id": "1755916849221qzr1j1j9a",
+        "name": "Topics",
+        "value": "{{\\\"topics in this article, separated by commas\\\"}}",
+        "type": "text"
+      }
+    ],
+    "triggers": [
+      "https://www.coursera.org/learn"
+    ]
+  },
   "template_list": [
+    "17563244334263wy4uogzt",
+    "1756311131233o48u886v0",
     "175607380839975y3zsd",
     "17560738009651bhubx6",
     "1756073771872lrulwr2",
